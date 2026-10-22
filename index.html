@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#46575b">
 <meta name="description" content="きょうは塾に行くふりをして｜公演社群、企劃書與贊助說明。">
 <title>今天假裝去補習｜公演連結</title>
 <style>
@@ -36,10 +36,41 @@ header{padding:24px 0 32px}.title-art{background:#fff;padding:16px;margin-bottom
 .nb{display:inline-block}.intro,.vsub{text-wrap:balance}
 .cal{margin-top:10px}.cal summary{list-style:none;display:inline-flex;align-items:center;min-height:36px;padding:4px 10px;border:1px solid var(--line);border-radius:6px;font-size:13px;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none}.cal summary::-webkit-details-marker{display:none}.cal[open] summary{background:var(--ink);color:var(--bg);border-color:var(--ink)}.cal summary:focus-visible,.cal-menu a:focus-visible,.maplink:focus-visible{outline:3px solid var(--accent);outline-offset:2px}.cal-menu{display:grid;gap:6px;margin-top:8px}.cal-menu a{display:flex;align-items:center;min-height:40px;padding:6px 10px;border-radius:6px;background:var(--soft);color:var(--ink);text-decoration:none;font-size:13px;line-height:1.35}.cal-menu a:hover{outline:1px solid var(--accent)}.maplink{display:inline-flex;align-items:center;min-height:40px;margin-top:8px;padding:6px 12px;border:1px solid var(--line);border-radius:6px;color:var(--ink);text-decoration:none;font-size:14px}.maplink:hover{border-color:var(--accent)}
 .cal-menu small{display:block;font-size:11px;color:var(--muted)}
+
+/* ===== Stage & spotlight theme ===== */
+:root,:root:root{color-scheme:dark;--bg:rgb(70,87,91);--paper:rgba(22,32,35,.42);--ink:#f6f0e2;--muted:#d8d3c6;--line:rgba(225,192,117,.42);--accent:rgb(225,192,117);--soft:rgba(255,255,255,.08);--spot:225,192,117;--curtain:170,83,79}
+@media(prefers-color-scheme:dark){:root{--bg:rgb(70,87,91);--paper:rgba(22,32,35,.42);--ink:#f6f0e2;--muted:#d8d3c6;--line:rgba(225,192,117,.42);--accent:rgb(225,192,117);--soft:rgba(255,255,255,.08)}}
+html{background:var(--bg)}html body{background:transparent!important;overflow-x:hidden}
+main{padding-top:64px}
+.stage-fx{position:absolute;z-index:-1;top:0;left:0;right:0;height:var(--stage-h,640px);overflow:hidden;pointer-events:none}
+.valance{position:absolute;top:0;left:0;right:0;height:34px;background:repeating-linear-gradient(90deg,rgb(132,58,55) 0,rgb(var(--curtain)) 14px,rgb(196,108,101) 22px,rgb(var(--curtain)) 30px,rgb(132,58,55) 44px);-webkit-mask:radial-gradient(22px 12px at 22px 100%,transparent 98%,#000) -22px 0/44px 100% repeat-x;mask:radial-gradient(22px 12px at 22px 100%,transparent 98%,#000) -22px 0/44px 100% repeat-x;box-shadow:0 6px 14px rgba(0,0,0,.35);filter:drop-shadow(0 4px 6px rgba(0,0,0,.35))}
+.curtain{position:absolute;top:0;bottom:0;width:clamp(16px,9vw,220px);background:repeating-linear-gradient(90deg,rgb(120,50,47) 0,rgb(var(--curtain)) 10px,rgb(200,112,104) 16px,rgb(var(--curtain)) 22px,rgb(120,50,47) 32px);-webkit-mask:linear-gradient(#000 70%,transparent);mask:linear-gradient(#000 70%,transparent);box-shadow:inset 0 0 30px rgba(0,0,0,.35)}
+.curtain.left{left:0;border-bottom-right-radius:100% 40%}.curtain.right{right:0;border-bottom-left-radius:100% 40%}
+.beam-wrap{position:absolute;inset:0;overflow:hidden;filter:blur(10px)}
+.beam{position:absolute;top:-10px;left:50%;width:min(900px,100%);height:calc(100% + 10px);transform:translateX(-50%);clip-path:polygon(46% 0,54% 0,88% 100%,12% 100%);background:linear-gradient(rgba(var(--spot),.75),rgba(var(--spot),.32) 70%,rgba(var(--spot),.05));animation:lightOn 1.8s ease-out both}
+header{position:relative}
+.title-art{background:transparent!important;position:relative;padding:8px 0!important;border-radius:0!important}
+.title-art::before{content:"";position:absolute;z-index:-1;left:50%;top:50%;width:min(560px,100vw);height:135%;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(255,246,222,1) 0,rgba(250,232,188,1) 45%,rgba(var(--spot),.85) 70%,rgba(var(--spot),.25) 88%,rgba(var(--spot),0) 100%);transition:opacity .3s ease;animation:lightOn 1.8s ease-out both}
+.title-art::after{content:"";position:absolute;z-index:-1;left:50%;bottom:-26px;width:min(460px,100vw);height:70px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(var(--spot),.55),rgba(var(--spot),0));animation:lightOn 1.8s ease-out both}
+.title-art img{mix-blend-mode:multiply}
+.swapping .title-art::before{opacity:.55}
+@keyframes lightOn{0%{opacity:0}8%{opacity:.7}12%{opacity:.08}20%{opacity:.85}26%{opacity:.35}40%{opacity:1}100%{opacity:1}}
+.intro{color:var(--ink)}
+.lang{background:rgba(0,0,0,.18)}.lang button[aria-pressed="true"]{background:var(--accent);color:#2b2a24}
+.mark{color:var(--ink)}
+.primary{border-left-color:var(--accent)!important}.contact .main{border-left-color:var(--accent)}
+a.card,.person,.info-card{backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
+.info-card{border-color:var(--accent)!important;box-shadow:0 0 0 1px rgba(var(--spot),.12),0 10px 30px rgba(0,0,0,.18)}
+a.card:hover{background:rgba(var(--spot),.12)}
+.copy{background:rgba(0,0,0,.2)}.copy.done{background:var(--accent);color:#2b2a24;border-color:var(--accent)}
+.cal[open] summary{background:var(--accent);color:#2b2a24;border-color:var(--accent)}
+@media(max-width:440px){main{padding-top:56px}.curtain{width:16px}.valance{height:28px}}
+@media(prefers-reduced-motion:reduce){.beam,.title-art::before,.title-art::after{animation:none}}
 </style>
 </head>
 <body>
 <main>
+<div class="stage-fx" aria-hidden="true"><div class="beam-wrap"><div class="beam"></div></div><div class="curtain left"></div><div class="curtain right"></div><div class="valance"></div></div>
 <div class="masthead"><span class="mark" data-i18n="mark">公演連結</span><div class="lang" role="group" aria-label="語言 / 言語"><button type="button" data-lang="zh-Hant" aria-pressed="true">中文</button><button type="button" data-lang="ja" aria-pressed="false" lang="ja">日本語</button></div></div>
 <header>
 <h1 class="sr-only" data-i18n="h1">今天假裝去補習</h1>
@@ -85,12 +116,14 @@ var T={
 "ja":{calAdd:"＋ カレンダー登録",calG:"Googleカレンダー",calIHtml:"Apple／Outlook<small>.icsを保存</small>",map:"Googleマップで見る",evMat:"『きょうは塾に行くふりをして』昼公演",evEve:"『きょうは塾に行くふりをして』夜公演",evDescMat:"第31回 台湾大学日本語劇公演\n14:30 開場｜15:00 開演",evDescEve:"第31回 台湾大学日本語劇公演\n18:30 開場｜19:00 開演",info:"公演情報",edition:"第31回 台湾大学日本語劇公演",showTitleHtml:"<span class=\"nb\">『きょうは</span><span class=\"nb\">塾に行くふりをして』</span>",date:"2027年5月22日（土）",mat:"昼公演",eve:"夜公演",start:"開演",door:"開場",venueL:"会場",venueHtml:"<span class=\"nb\">国立台湾大学</span> <span class=\"nb\">外国語教学・リソースセンター</span> <span class=\"nb\">視聴覚小劇場</span>",venueSubHtml:"<span class=\"nb\">（現地表記：國立臺灣大學</span><span class=\"nb\">外語教學暨資源中心視聽小劇場）</span>",title:"きょうは塾に行くふりをして｜公演リンク",h1:"きょうは塾に行くふりをして",desc:"きょうは塾に行くふりをして｜公演SNS・企画書・協賛のご案内。",alt:"きょうは塾に行くふりをして（中国語タイトル：今天假裝去補習）",mark:"公演リンク",intro:"公演の最新情報と協賛のご案内はこちら。",social:"01 / 公式SNS",fb:"公演の最新情報をチェック",partner:"02 / 協力・協賛",plan:"公演企画書",planD:"企画書を見る（日本語版）· PDF",spon:"協賛のご案内",sponD:"協賛について · Google Drive",note:"すべてのリンクは新しいタブで開きます。",contact:"03 / お問い合わせ",mainMail:"公演お問い合わせ窓口",pr:"広報責任者",lead:"総代表",prTel:"+886-900-468-725",leadTel:"+886-908-877-587",copy:"コピー",copied:"コピー済 ✓"}};
 var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches,cur=null,timer=null;
 function texts(t){$$("[data-i18n]").forEach(function(e){var k=e.getAttribute("data-i18n");if(/Html$/.test(k))e.innerHTML=t[k];else e.textContent=t[k]})}
-var EV={mat:["20270522T063000Z","20270522T090000Z","20270522T143000","20270522T170000"],eve:["20270522T103000Z","20270522T130000Z","20270522T183000","20270522T210000"]},LOC="國立臺灣大學外語教學暨資源中心視聽小劇場",MAPURL="https://share.google/1Z5p6Uc3GPWKCuruB";
+var EV={mat:["20270522T063000Z","20270522T090000Z","20270522T143000","20270522T170000"],eve:["20270522T103000Z","20270522T130000Z","20270522T183000","20270522T210000"]},LOC="國立臺灣大學外語教學暨資源中心視聽小劇場",MAPURL="https://maps.app.goo.gl/MJgdTYegMP1pWLSr6";
 function icsEsc(x){return x.replace(/\\/g,"\\\\").replace(/;/g,"\\;").replace(/,/g,"\\,").replace(/\n/g,"\\n")}
 function cal(t){$$(".cal-g,.cal-i").forEach(function(a){var k=a.getAttribute("data-show"),e=EV[k],title=t[k==="mat"?"evMat":"evEve"],desc=t[k==="mat"?"evDescMat":"evDescEve"]+"\n"+MAPURL;
 if(a.classList.contains("cal-g")){a.href="https://calendar.google.com/calendar/render?action=TEMPLATE&text="+encodeURIComponent(title)+"&dates="+e[2]+"/"+e[3]+"&ctz=Asia/Taipei&details="+encodeURIComponent(desc)+"&location="+encodeURIComponent(LOC)}
 else{var ics=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//ntujpdrama31//links//ZH","CALSCALE:GREGORIAN","METHOD:PUBLISH","BEGIN:VEVENT","UID:ntujpdrama31-"+k+"-20270522@ntujpdrama31","DTSTAMP:20261022T000000Z","DTSTART:"+e[0],"DTEND:"+e[1],"SUMMARY:"+icsEsc(title),"DESCRIPTION:"+icsEsc(desc),"LOCATION:"+icsEsc(LOC),"URL:"+MAPURL,"BEGIN:VALARM","TRIGGER:-P1D","ACTION:DISPLAY","DESCRIPTION:"+icsEsc(title),"END:VALARM","END:VEVENT","END:VCALENDAR"].join("\r\n");
 a.href="data:text/calendar;charset=utf-8,"+encodeURIComponent(ics)}})}
+function stageH(){var h=document.querySelector("header");if(h)document.querySelector(".stage-fx").style.setProperty("--stage-h",(h.offsetTop+h.offsetHeight+30)+"px")}
+window.addEventListener("resize",stageH);window.addEventListener("load",stageH);
 function set(l,animate){if(!T[l])l="zh-Hant";if(l===cur)return;cur=l;var t=T[l];document.documentElement.lang=l;document.title=t.title;
 document.querySelector('meta[name="description"]').content=t.desc;
 $$("[data-logo]").forEach(function(i){var on=i.getAttribute("data-logo")===l;i.hidden=false;if(on)i.classList.remove("off");else i.classList.add("off");i.setAttribute("aria-hidden",on?"false":"true")});
@@ -104,7 +137,7 @@ function done(){lab.textContent=T[cur].copied;btn.classList.add("done");document
 if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(done,function(){if(fallbackCopy(t))done()})}else if(fallbackCopy(t))done()})});
 $$("[data-lang]").forEach(function(b){b.addEventListener("click",function(){set(b.getAttribute("data-lang"),true)})});
 var mq=/[?&]lang=([^&#]*)/.exec(location.search),q=mq?mq[1]:null,saved=null;try{saved=localStorage.getItem("lang")}catch(e){}
-set(q==="ja"?"ja":q==="zh"?"zh-Hant":saved||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"zh-Hant"));
+stageH();set(q==="ja"?"ja":q==="zh"?"zh-Hant":saved||((navigator.language||"").toLowerCase().indexOf("ja")===0?"ja":"zh-Hant"));
 })();
 </script>
 </body>
